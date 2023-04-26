@@ -2,8 +2,12 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h2>React & Redux App E-Commerce </h2>
+    <div className="grid-container">
+      <header>
+        <a href='/'>React Shopping Cart</a>
+      </header>
+      <main>Product List</main>
+      <footer>All rights is required.</footer>
     </div>
   );
 }
