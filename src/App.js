@@ -13,6 +13,12 @@ class App extends React.Component {
       sort: "", 
     };
   }
+  sortProducts(sort){
+
+  }
+  filterProducts(size) {
+    
+  }
   render() {
     return (
       <div className="grid-container">
