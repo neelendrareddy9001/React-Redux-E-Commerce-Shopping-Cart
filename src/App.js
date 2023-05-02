@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import data from './data.json';
 import Products from './components/Products';
+import Cart from './component/Cart';
 
 
 class App extends React.Component {
@@ -79,9 +80,14 @@ class App extends React.Component {
                 filterProducts={this.filterProducts}
                 sortProducts={this.sortProducts} 
               ></Filter>
-                <Products products={this.state.products}></Products>
+                <Products products=
+                    {this.state.products}
+                     addToCart={this.addToCart}
+                ></Products>
             </div>
-            <div className='sidebar'>Cart Items</div>
+            <div className='sidebar'>
+                <Cart cartItems={this.state.cartItems} />
+            </div>
           </div>
         </main>
         <footer>All rights is required.</footer>
