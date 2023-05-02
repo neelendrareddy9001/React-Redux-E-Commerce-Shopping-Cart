@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import formatCurrency from '../Utl';
 
 export default class Cart extends Component {
+  constructor(props) {
+        super();
+        this.state = {showCheckOut: false};
+    }
   render() {
     const {cartItems} = this.props;
     return (
@@ -35,6 +39,7 @@ export default class Cart extends Component {
             </ul>
         </div>
        {cartItems.length !== 0 &&(
+         <div>
             <div className='cart'>
             <div className='total'>
                 <div>
@@ -46,6 +51,39 @@ export default class Cart extends Component {
                 <button className='button primary' onClick={() => this.setState({showCheckOut: true})}>Proceed</button>
             </div>
         </div>
+        {this.state.showCheckOut && (
+                <div className='cart'>
+                    <form onSubmit={this.createOrder}>
+                        <ul className='form-container'>
+                            <li>
+                                <label>Email</label>
+                                <input type='email'
+                                    name="email"
+                                    required
+                                    onChange={this.hnadleInput}
+                                ></input>
+                            </li>
+                            <li>
+                                <label>Name</label>
+                                <input type='text'
+                                    name="name"
+                                    required
+                                    onChange={this.hnadleInput}
+                                ></input>
+                            </li>
+                            <li>
+                                <label>Address</label>
+                                <input type='address'
+                                    name='address'
+                                    required
+                                    onChange={this.hnadleInput}
+                                ></input>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            )}
+            </div>
         )}
       </div>
       </div>
