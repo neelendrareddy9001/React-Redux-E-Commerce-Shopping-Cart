@@ -13,6 +13,20 @@ class App extends React.Component {
       sort: "", 
     };
   }
+  addToCart = (product) => {
+    const cartItems = this.state.cartItems.slice();
+    let alreadyInCart = false;
+    cartItems.forEach((item) => {
+      if(item._id === product._id) {
+        item.count++;
+        alreadyInCart = true;
+      }
+    });
+    if(!alreadyInCart)  {
+      cartItems.push({...product, count: 1});
+    }
+    this.setState(cartItems)
+  };
   sortProducts = (event) => {
     //impl
     const sort = event.target.value;
