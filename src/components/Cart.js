@@ -4,7 +4,15 @@ import formatCurrency from '../Utl';
 export default class Cart extends Component {
   constructor(props) {
         super();
-        this.state = {showCheckOut: false};
+        this.state = {
+            name: "",
+            email: "",
+            address: "",
+            showCheckOut: false
+        };
+    }
+    hnadleInput = (e) => {
+        this.setState({[e.target.nam]: e.target.value});
     }
   render() {
     const {cartItems} = this.props;
