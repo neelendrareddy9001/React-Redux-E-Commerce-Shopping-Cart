@@ -26,8 +26,7 @@ class App extends React.Component {
     if(!alreadyInCart)  {
       cartItems.push({...product, count: 1});
     }
-    this.setState(cartItems)
-  };
+    this.setState({cartItems})
   sortProducts = (event) => {
     //impl
     const sort = event.target.value;
