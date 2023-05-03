@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import formatCurrency from '../Utl';
-import Fade from 'react-reveal/Fade';
+import Fade from 'react-reveal/Fade
+import Modal from 'react-modal';
+import Zoom from 'react-reveal/Zoom';
 
 export default class Products extends Component {
+ constructor (props) {
+    super();
+    this.state = {
+      product: null,
+    };
+  }
+  openModal = (product) => {
+    this.setState({product});
+  }
+  closeModal = () => {
+    this.setState({product:null});
+  }
  render() {
     return (
       <div>
