@@ -41,7 +41,7 @@ export default class Products extends Component {
        {product && (
           <Modal isOpen={true} onRequestClose={this.closeModal}>
             <Zoom>
-              <button className='close-modal' onClick={this.closeModa}>
+              <button className='close-modal' onClick={this.closeModal}>
               x
               </button>
               <div className='product-details'>
