@@ -14,6 +14,16 @@ export default class Cart extends Component {
     hnadleInput = (e) => {
         this.setState({[e.target.nam]: e.target.value});
     }
+  createOrder = (e) => {
+        e.preventDefault();
+        const order = {
+            name: this.state.name,
+            email : this.state.email,
+            address: this.state.address,
+            cartItems: this.props.cartItems,
+        };
+        this.props.createOrder(order);
+    }
   render() {
     const {cartItems} = this.props;
     return (
